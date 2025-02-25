@@ -2,16 +2,11 @@ name: Deploy demo
 
 # Action will run on pushes to selected branches
 on:
-  push:
-    branches:
-      - develop
-      - main
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       password:
-        description: 'Password for the deployment'
+        description: "Password for the deployment"
         required: true
 
 jobs:
