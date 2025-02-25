@@ -4,7 +4,7 @@ name: Deploy demo
 on:
   push:
     branches:
-      - dev
+      - develop
       - main
 
   # Allows you to run this workflow manually from the Actions tab
