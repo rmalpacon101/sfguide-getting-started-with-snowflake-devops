@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       password:
-        description: 'Password for the deployment'
+        description: "Password for the deployment"
         required: true
 
 jobs:
