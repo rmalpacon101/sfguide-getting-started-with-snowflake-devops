@@ -24,5 +24,10 @@ jobs:
       # Deploy pipeline with branch specific parameters
       - name: Mask input value
         run: |
-
+          PASSWORD=${{ env.PASSWORD }}
           echo ::add-mask::$PASSWORD
+          echo API_PASSWORD=$PASSWORD >> $GITHUB_ENV
+      - name: Deploy data pipeline
+        run: |
+          echo "Deploying data pipeline"
+          echo ${{env.API_PASSWORD}}
