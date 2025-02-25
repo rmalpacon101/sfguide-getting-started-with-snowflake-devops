@@ -1,0 +1,28 @@
+name: Deploy demo
+
+# Action will run on pushes to selected branches
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      password:
+        description: "Password for the deployment"
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    env:
+      PASSWORD: ${{ github.event.inputs.password }}
+
+    steps:
+      # Checkout step is necessary if you want to use a config file from your repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Deploy pipeline with branch specific parameters
+      - name: Mask input value
+        run: |
+
+          echo ::add-mask::$PASSWORD
