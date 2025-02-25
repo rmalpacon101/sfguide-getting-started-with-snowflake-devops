@@ -13,9 +13,6 @@ jobs:
   deploy:
     runs-on: ubuntu-22.04
 
-    env:
-      PASSWORD: ${{ github.event.inputs.password }}
-
     steps:
       # Checkout step is necessary if you want to use a config file from your repo
       - name: Checkout repository
